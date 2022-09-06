@@ -1,39 +1,25 @@
 package com.coding.exercises.arrays;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> result = new ArrayList<>();
-        Map<String, List<String>> anagramGroup = new HashMap<>();
-
-        for (int i = 0; i < strs.length; i++) {
-            char tempStr[] = strs[i].toCharArray();
-            System.out.println("String: " + strs[i]);
-            Arrays.sort(tempStr);
-            String sortedStr = new String(tempStr);
-            System.out.println("Sorted String: " + sortedStr);
-            if (anagramGroup.containsKey(sortedStr)) {
-                List<String> currentList = anagramGroup.get(sortedStr);
-                String data = strs[i];
-                currentList.add(data);
-                anagramGroup.put(sortedStr, currentList);
-                System.out.println("Anagram List: " + anagramGroup.get(sortedStr));
-            } else {
-                List<String> newList = new ArrayList<>();
-                newList.add(strs[i]);
-                anagramGroup.put(sortedStr, newList);
-                System.out.println("Anagram List: " + anagramGroup.get(sortedStr));
+        List<List<String>> res = new ArrayList<>();
+        if (strs.length == 0) return res;
+        HashMap<String, List<String>> map = new HashMap<>();
+        for (String s : strs) {
+            char[] hash = new char[26];
+            for (char c : s.toCharArray()) {
+                hash[c - 'a']++;
             }
+            String key = new String(hash);
+            System.out.println("Key : " + key);
+            map.computeIfAbsent(key, k -> new ArrayList<>());
+            map.get(key).add(s);
         }
-
-        for(List<String> anagrams: anagramGroup.values()) {
-            result.add(anagrams);
-        }
-        return result;
+        res.addAll(map.values());
+        return res;
     }
 }
