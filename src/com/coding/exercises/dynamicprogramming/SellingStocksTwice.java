@@ -32,7 +32,7 @@ public class SellingStocksTwice {
         }
         // If numberOfTransactions, we can only SKIP. We have already bought enough.
         else if (buy == 1 && numberOfTransactions == 0){
-            maxProfit = maxProfitSubProblem(prices, index+1, 1, numberOfTransactions, dp);
+            maxProfit = 0;
         }
         // If we are allowed to sell, we can SELL or SKIP.
         else if (buy == 0) {

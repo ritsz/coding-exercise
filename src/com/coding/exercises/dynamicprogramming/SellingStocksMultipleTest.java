@@ -6,15 +6,19 @@ import org.junit.jupiter.api.Test;
 
 public class SellingStocksMultipleTest {
     private SellingStocksMultiple sellingStocksMultiple;
+    private SellingStocksMultipleTabulation sellingStocksMultipleTabulation;
 
     public SellingStocksMultipleTest() {
         this.sellingStocksMultiple = new SellingStocksMultiple();
+        this.sellingStocksMultipleTabulation = new SellingStocksMultipleTabulation();
     }
 
     @Test
     public void testIncreasing() {
         int[] prices = {1,2,3,4,5};
         int ret = sellingStocksMultiple.maxProfit(prices);
+        Assertions.assertTrue(ret==4);
+        ret = sellingStocksMultipleTabulation.maxProfit(prices);
         Assertions.assertTrue(ret==4);
     }
 
@@ -23,6 +27,8 @@ public class SellingStocksMultipleTest {
         int[] prices = {5,4,3,2,1};
         int ret = sellingStocksMultiple.maxProfit(prices);
         Assertions.assertTrue(ret==0);
+        ret = sellingStocksMultipleTabulation.maxProfit(prices);
+        Assertions.assertTrue(ret==0);
     }
 
     @Test
@@ -30,12 +36,16 @@ public class SellingStocksMultipleTest {
         int[] prices = {7,1,5,3,6,4};
         int ret = sellingStocksMultiple.maxProfit(prices);
         Assertions.assertTrue(ret==7);
+        ret = sellingStocksMultipleTabulation.maxProfit(prices);
+        Assertions.assertTrue(ret==7);
     }
 
     @Test
     public void testIncreasingEnd() {
         int[] prices = {1,5,7,5,6,11};
         int ret = sellingStocksMultiple.maxProfit(prices);
+        Assertions.assertTrue(ret==12);
+        ret = sellingStocksMultipleTabulation.maxProfit(prices);
         Assertions.assertTrue(ret==12);
     }
 }
