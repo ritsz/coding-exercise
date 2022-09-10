@@ -20,6 +20,8 @@ public class SellingStocksWithCooldownTest {
         Assertions.assertTrue(ret == 4);
         ret = sellingStocksWithCooldownTabulation.maxProfit(prices);
         Assertions.assertTrue(ret == 4);
+        ret = sellingStocksWithCooldownTabulation.maxProfitTabulationSpaceOptimization(prices);
+        Assertions.assertTrue(ret == 4);
     }
 
     @Test
@@ -28,6 +30,8 @@ public class SellingStocksWithCooldownTest {
         int ret = sellingStocksWithCooldown.maxProfit(prices);
         Assertions.assertTrue(ret == 3);
         ret = sellingStocksWithCooldownTabulation.maxProfit(prices);
+        Assertions.assertTrue(ret == 3);
+        ret = sellingStocksWithCooldownTabulation.maxProfitTabulationSpaceOptimization(prices);
         Assertions.assertTrue(ret == 3);
     }
 
@@ -38,6 +42,8 @@ public class SellingStocksWithCooldownTest {
         Assertions.assertTrue(ret == 0);
         ret = sellingStocksWithCooldownTabulation.maxProfit(prices);
         Assertions.assertTrue(ret == 0);
+        ret = sellingStocksWithCooldownTabulation.maxProfitTabulationSpaceOptimization(prices);
+        Assertions.assertTrue(ret == 0);
     }
 
     @Test
@@ -47,6 +53,8 @@ public class SellingStocksWithCooldownTest {
         Assertions.assertTrue(ret == 8);
         ret = sellingStocksWithCooldownTabulation.maxProfit(prices);
         Assertions.assertTrue(ret == 8);
+        ret = sellingStocksWithCooldownTabulation.maxProfitTabulationSpaceOptimization(prices);
+        Assertions.assertTrue(ret == 8);
     }
 
     @Test
@@ -55,6 +63,8 @@ public class SellingStocksWithCooldownTest {
         int ret = sellingStocksWithCooldown.maxProfit(prices);
         Assertions.assertTrue(ret == 0);
         ret = sellingStocksWithCooldownTabulation.maxProfit(prices);
+        Assertions.assertTrue(ret == 0);
+        ret = sellingStocksWithCooldownTabulation.maxProfitTabulationSpaceOptimization(prices);
         Assertions.assertTrue(ret == 0);
     }
 }
